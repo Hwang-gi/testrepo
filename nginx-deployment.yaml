@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 1st-web
+  labels:
+    app: web-app
+spec:
+  replicas: 8
+  selector:
+    matchLabels:
+      app: web-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+      - image: nginx:1.14-alpine
+        name: web
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+        resources:
+          requests:
+            memory: 256Mi
+            cpu: 250m
+          limits:
+            memory: 512Mi
+            cpu: 500m
+        volumeMounts:  # containers 항목 아래로 들여쓰기
+        - name: pvweb
+          mountPath: /1st-web
+      volumes:
+      - name: pvweb
+        persistentVolumeClaim:
+          claimName: pvcweb
+      nodeSelector:
+        app: web-app
