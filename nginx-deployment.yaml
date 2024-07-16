@@ -61,9 +61,9 @@ spec:
   selector:
     app: web-app
   type: NodePort
+  clusterIP: 10.100.100.100
   ports:
     - protocol: TCP
-      clusterIP: 10.100.100.101
       port: 80
       targetPort: 80
       nodePort: 30100
