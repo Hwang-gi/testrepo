@@ -60,10 +60,8 @@ metadata:
 spec:
   selector:
     app: web-app
-  type: NodePort #Ingress를 사용하므로 ClusterIP로 타입 설정했습니다.
-  clusterIP: 10.100.100.100
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-      NodePort: 30100
