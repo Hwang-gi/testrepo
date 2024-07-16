@@ -45,7 +45,7 @@ spec:
             cpu: "500m"
         volumeMounts:
         - name: pv-was
-          mountPath: /1st-web
+          mountPath: /1st-was
       volumes:
       - name: pv-was
         persistentVolumeClaim:
