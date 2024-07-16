@@ -44,7 +44,7 @@ spec:
             memory: "512Mi"
             cpu: "500m"
         volumeMounts:
-        - name: pv-web
+        - name: pv-was
           mountPath: /1st-web
       volumes:
       - name: pv-was
