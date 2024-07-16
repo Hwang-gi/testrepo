@@ -63,6 +63,7 @@ spec:
   type: NodePort
   ports:
     - protocol: TCP
+      clusterIP: 10.100.100.101
       port: 80
       targetPort: 80
       nodePort: 30100
