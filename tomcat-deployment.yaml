@@ -72,3 +72,17 @@ spec:
         hostPath:
           path: /1st-was
           type: DirectoryOrCreate
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: was-svc # 서비스 이름: was-svc, app 레이블: was-app타입: ClusterIP
+spec:
+  selector:
+    app: was-app
+  type: ClusterIP
+  clusterIP: 10.100.100.101
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
