@@ -47,9 +47,9 @@ spec:
         - name: pv-web
           mountPath: /1st-web
       volumes:
-      - name: pv-web
+      - name: pv-was
         persistentVolumeClaim:
-          claimName: pvc-web
+          claimName: pvc-was
 ---
 apiVersion: v1
 kind: Service
