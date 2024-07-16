@@ -1,0 +1,17 @@
+# 규칙: 주석은 아래 내용 부연설명, 짧은 내용은 옆에 추가
+# hpa 파일 (파드 개수 조정하는 오토스케일링)
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hpe-web
+spec:
+  # deployment 파일에 최소 파드 개수를 3개로 설정 → 최소 3개부터 최대 10개까지
+  maxReplicas: 10
+  minReplicas: 3
+  # 1st-web deployment 범위에서
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: 1st-web
+  # CPU 사용률이 50%를 초과할 때마다 pod 개수를 늘려 CPU 사용 조정
+  targetCPUUtilizationPercentage: 50
