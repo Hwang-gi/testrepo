@@ -9,11 +9,11 @@ spec:
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Recycle
-  storageClassName: web-sc
+  storageClassName: was-sc
   # 볼륨 유형 명시
   # 여기서는 hostPath를 사용하므로, hostPath 타입을 명시합니다.
   hostPath:
-    path: /data/web
+    path: /data/was
     type: DirectoryOrCreate  # 디렉토리가 없으면 생성
 ---
 # PVC
@@ -30,4 +30,4 @@ spec:
     # PV에서 스토리지 용량을 8G로 줬기 때문에 요청 스토리지 용량을 동일하게 8G로 줬습니다.
     requests:
       storage: 8Gi
-  storageClassName: web-sc
+  storageClassName: was-sc
