@@ -60,10 +60,9 @@ metadata:
 spec:
   selector:
     app: web-app
-  type: NodePort
+  type: ClusterIP
   clusterIP: 10.100.100.100
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 30100
