@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       # 컨테이너 이름: was, 사용 PORT: 8080
-      - image: jinwoo0824/tomcat:v1.1
+      - image: tomcat:9.0-alpine
         name: was
         ports:
         - containerPort: 8080
