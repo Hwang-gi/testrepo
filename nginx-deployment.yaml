@@ -20,7 +20,7 @@ spec:
         app: web-app
     spec:
       containers:
-      - image: hwanggc19/1st-nginx:v1.3
+      - image: nginx:1.14
         name: web
         ports:
         - containerPort: 80
