@@ -20,10 +20,14 @@ spec:
         app: web-app
     spec:
       containers:
-      - image: nginx:1.14-alpine
+      - image: jinwoo0824/web:v1.3
         name: web
         ports:
         - containerPort: 80
+        resources:
+          limits:
+            memory: 100Mi
+            cpu: 100m
         livenessProbe:
           httpGet:
             path: /
@@ -36,22 +40,18 @@ spec:
             port: 80
           initialDelaySeconds: 5
           periodSeconds: 5
-        resources:
-          requests:
-            memory: "128Mi"
-            cpu: "125m"
-          limits:
-            memory: "256Mi"
-            cpu: "250m"
         volumeMounts:
-        - name: pv-web
-          mountPath: /usr/share/nginx/html/1st-web
+        - name: pvcweb
+          mountPath: /1st-web
       volumes:
-      - name: pv-web
+      - name: pvcweb
         persistentVolumeClaim:
-          claimName: pvc-web
+          claimName: pvcweb
+      nodeSelector:
+        app: web-app
+
 ---
-# nginx 서비스
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -59,9 +59,10 @@ metadata:
 spec:
   selector:
     app: web-app
-  type: ClusterIP
+  type: NodePort
   clusterIP: 10.100.100.100
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
+      nodePort: 30100
