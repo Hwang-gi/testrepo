@@ -46,7 +46,7 @@ spec:
             cpu: "500m"
         volumeMounts:
         - name: pv-web
-          mountPath: /1st-web
+          mountPath: /usr/local/nginx/html/1st-web
       volumes:
       - name: pv-web
         persistentVolumeClaim:
