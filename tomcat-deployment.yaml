@@ -20,7 +20,7 @@ spec:
         app: was-app
     spec:
       containers:
-      - image: hwanggc19/tomcatimage1:v1.0
+      - image: hwanggc19/tomcatimage1:v1.1
         name: was
         ports:
         - containerPort: 8080
