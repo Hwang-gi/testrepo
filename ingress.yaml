@@ -8,7 +8,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /1st-web
+      - path: /usr/share/nginx/html/1st-web
         pathType: Prefix
         backend:
           service:
@@ -16,7 +16,7 @@ spec:
             port:
               number: 80
       paths:
-      - path: /1st-was
+      - path: /usr/local/tomcat/webapps/ROOT/1st-was
         pathType: Prefix
         backend:
            service:
