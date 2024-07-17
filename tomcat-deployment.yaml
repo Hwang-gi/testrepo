@@ -59,7 +59,7 @@ spec:
   selector:
     app: was-app
   type: ClusterIP
-  clusterIP: 10.100.100.103
+  clusterIP: 10.100.0.103
   ports:
     - protocol: TCP
       port: 8080
