@@ -20,7 +20,7 @@ spec:
         app: web-app
     spec:
       containers:
-      - image: nginx:1.14-alpine
+      - image: hwanggc19/1stnginx:v1.0
       
         name: web
         ports:
