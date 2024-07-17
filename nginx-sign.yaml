@@ -42,7 +42,7 @@ spec:
           initialDelaySeconds: 5
           periodSeconds: 5
         volumeMounts:
-        - name: pvcsign
+        - name: pvsign
           mountPath: /1st-websign
       volumes:
       - name: pvcsign
