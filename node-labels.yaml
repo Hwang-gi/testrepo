@@ -1,27 +1,27 @@
 apiVersion: v1
 kind: Node
 metadata:
-  name: k8s-worker1new
+  name: k8s-worker1
   labels:
     app: web-app
 ---
 apiVersion: v1
 kind: Node
 metadata:
-  name: k8s-worker2new
+  name: k8s-worker2
   labels:
     app: was-app
 ---
 apiVersion: v1
 kind: Node
 metadata:
-  name: k8s-worker1new
+  name: k8s-worker3
   labels:
     order: order-app
 ---
 apiVersion: v1
 kind: Node
 metadata:
-  name: k8s-worker1new
+  name: k8s-worker1
   labels:
     sign: sign-app
