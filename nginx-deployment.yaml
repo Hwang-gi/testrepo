@@ -20,22 +20,22 @@ spec:
         app: web-app
     spec:
       containers:
-      - image: nginx:1.14
+      - image: jinwoo0824/web:v1.2
         name: web
         ports:
         - containerPort: 80
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 80
-          initialDelaySeconds: 5
-          periodSeconds: 5
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 80
-          initialDelaySeconds: 5
-          periodSeconds: 5
+#        livenessProbe:
+#          httpGet:
+#            path: /
+ #           port: 80
+  #        initialDelaySeconds: 5
+   #       periodSeconds: 5
+    #    readinessProbe:
+     #     httpGet:
+      #      path: /
+       #     port: 80
+        #  initialDelaySeconds: 5
+         # periodSeconds: 5
         resources:
           requests:
             memory: "128Mi"
