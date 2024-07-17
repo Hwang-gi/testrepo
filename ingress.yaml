@@ -14,18 +14,18 @@ spec:
               service:
                 name: web-svc
                 port:
-                  number: 80
+                  number: 31000
           - path: /cafe/signup.jsp
             pathType: Prefix
             backend:
               service:
                 name: websign-svc
                 port:
-                  number: 80
+                  number: 32000
           - path: /cafe/order.jsp
             pathType: Prefix
             backend:
               service:
                 name: weborder-svc
                 port:
-                  number: 80
+                  number: 33000
