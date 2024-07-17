@@ -20,7 +20,7 @@ spec:
         app: web-app
     spec:
       containers:
-      - image: jinwoo0824/web:v1.3
+      - image: nginx:1.14-alpine
         name: web
         ports:
         - containerPort: 80
