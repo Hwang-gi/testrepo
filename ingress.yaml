@@ -15,7 +15,6 @@ spec:
             name: web-svc
             port:
               number: 80
-      paths:
       - path: /usr/local/tomcat/webapps/ROOT/1st-was
         pathType: Prefix
         backend:
