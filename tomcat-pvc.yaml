@@ -8,26 +8,22 @@ spec:
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
-  persistentVolumeReclaimPolicy: Recycle
+  persistentVolumeReclaimPolicy: Retain
   storageClassName: was-sc
-  # 볼륨 유형 명시
-  # 여기서는 hostPath를 사용하므로, hostPath 타입을 명시합니다.
   hostPath:
     path: /data/was
-    type: DirectoryOrCreate  # 디렉토리가 없으면 생성
+    type: DirectoryOrCreate
 ---
-# PVC
+
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: pvc-was
-# PV에서 줬던 설정과 동일하게 작성했습니다.
+  name: pvcwas
 spec:
   accessModes:
     - ReadWriteMany
   volumeMode: Filesystem
   resources:
-    # PV에서 스토리지 용량을 8G로 줬기 때문에 요청 스토리지 용량을 동일하게 8G로 줬습니다.
     requests:
       storage: 8Gi
   storageClassName: was-sc
