@@ -20,41 +20,45 @@ spec:
         app: was-app
     spec:
       containers:
-      - image: hwanggc19/tomcatimage1:v1.3
-        name: was
-        ports:
-        - containerPort: 8080
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 8080
-          initialDelaySeconds: 5
-          periodSeconds: 5
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 8080
-          initialDelaySeconds: 5
-          periodSeconds: 5
-        resources:
-          requests:
-            memory: "256Mi"
-            cpu: "250m"
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
-        volumeMounts:
-        - name: pv-was
-          mountPath: /usr/local/tomcat/webapps/ROOT/1st-was
+        - image: jinwoo0824/tomcat:v1.3
+          name: was
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          resources:
+            requests:
+              memory: 400Mi
+              cpu: 400m
+            limits:
+              memory: 400Mi
+              cpu: 400m
+          volumeMounts:
+            - name: pv-was
+              mountPath: /1st-was
       volumes:
-      - name: pv-was
-        persistentVolumeClaim:
-          claimName: pvc-was
+        - name: pv-was
+          persistentVolumeClaim:
+            claimName: pvcwas
+      nodeSelector:
+        app: was-app
+
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
-  name: was-svc # 서비스 이름: was-svc, app 레이블: was-app타입: ClusterIP
+  name: was-svc
 spec:
   selector:
     app: was-app
