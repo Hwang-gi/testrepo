@@ -25,6 +25,9 @@ spec:
         ports:
         - containerPort: 80
         resources:
+          requests:
+            memory: 100Mi
+            cpu: 100m
           limits:
             memory: 100Mi
             cpu: 100m
@@ -65,4 +68,3 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 31000
