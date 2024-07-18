@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 1st-websign
+  name: 1st-weborder
   labels:
-    sign: sign-app
+    order: order-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      sign: sign-app
+      order: order-app
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -17,11 +17,11 @@ spec:
   template:
     metadata:
       labels:
-       sign: sign-app
+       order: order-app
     spec:
       containers:
       - image: jinwoo0824/web:v1.3
-        name: sign
+        name: order
         ports:
         - containerPort: 80
         resources:
@@ -44,28 +44,27 @@ spec:
           initialDelaySeconds: 5
           periodSeconds: 5
         volumeMounts:
-        - name: pvsign
-          mountPath: /1st-websign
+        - name: pvcorder
+          mountPath: /1st-weborder
       volumes:
-      - name: pvsign
+      - name: pvcorder
         persistentVolumeClaim:
-          claimName: pvcsign
+          claimName: pvcorder
       nodeSelector:
-        sign: sign-app
+       order: order-app
 
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: websign-svc
+  name: weborder-svc
 spec:
   selector:
-    sign: sign-app
+    order: order-app
   type: NodePort
-  clusterIP: 10.100.100.101
+  clusterIP: 10.100.100.102
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 32000
