@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 1st-weborder
+  name: 1st-websign
   labels:
-    order: order-app
+    sign: sign-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      order: order-app
+      sign: sign-app
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -45,23 +45,23 @@ spec:
           periodSeconds: 5
         volumeMounts:
         - name: pvcorder
-          mountPath: /1st-weborder
+          mountPath: /1st-websign
       volumes:
-      - name: pvcorder
+      - name: pvsign
         persistentVolumeClaim:
-          claimName: pvcorder
+          claimName: pvcsign
       nodeSelector:
-       order: order-app
+       sign: sign-app
 
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: weborder-svc
+  name: websign-svc
 spec:
   selector:
-    order: order-app
+    sign: sign-app
   type: NodePort
   clusterIP: 10.100.100.102
   ports:
