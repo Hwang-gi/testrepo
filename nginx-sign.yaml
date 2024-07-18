@@ -17,11 +17,11 @@ spec:
   template:
     metadata:
       labels:
-       order: order-app
+       sign: sign-app
     spec:
       containers:
-      - image: jinwoo0824/web:v1.3
-        name: order
+      - image: jinwoo0824/web:v1.4
+        name: sign
         ports:
         - containerPort: 80
         resources:
@@ -44,14 +44,14 @@ spec:
           initialDelaySeconds: 5
           periodSeconds: 5
         volumeMounts:
-        - name: pvcorder
+        - name: pvcsign
           mountPath: /1st-websign
       volumes:
-      - name: pvsign
+      - name: pvcsign
         persistentVolumeClaim:
           claimName: pvcsign
       nodeSelector:
-       sign: sign-app
+        sign: sign-app
 
 ---
 
@@ -63,7 +63,7 @@ spec:
   selector:
     sign: sign-app
   type: NodePort
-  clusterIP: 10.100.100.102
+  clusterIP: 10.100.100.101
   ports:
     - protocol: TCP
       port: 80
