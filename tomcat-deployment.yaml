@@ -20,7 +20,7 @@ spec:
         app: was-app
     spec:
       containers:
-        - image: jinwoo0824/tomcat:v1.3
+        - image: jinwoo0824/tomcat:v1.4
           name: was
           ports:
             - containerPort: 8080
