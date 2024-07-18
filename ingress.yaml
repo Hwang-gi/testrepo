@@ -8,24 +8,24 @@ spec:
   rules:
     - http:
         paths:
-          - path: /cafe/main.jsp
+          - path: /
             pathType: Prefix
             backend:
               service:
                 name: web-svc
                 port:
-                  number: 31000
-          - path: /cafe/signup.jsp
+                  number: 80
+          - path: /
             pathType: Prefix
             backend:
               service:
                 name: websign-svc
                 port:
-                  number: 31000
-          - path: /cafe/order.jsp
+                  number: 80
+          - path: /
             pathType: Prefix
             backend:
               service:
                 name: weborder-svc
                 port:
-                  number: 31000
+                  number: 80
