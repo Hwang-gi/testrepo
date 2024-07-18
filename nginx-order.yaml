@@ -20,7 +20,7 @@ spec:
        order: order-app
     spec:
       containers:
-      - image: jinwoo0824/web:v1.3
+      - image: jinwoo0824/web:v1.4
         name: order
         ports:
         - containerPort: 80
