@@ -21,11 +21,11 @@ spec:
               service:
                 name: websign-svc
                 port:
-                  number: 32000
+                  number: 31000
           - path: /cafe/order.jsp
             pathType: Prefix
             backend:
               service:
                 name: weborder-svc
                 port:
-                  number: 33000
+                  number: 31000
