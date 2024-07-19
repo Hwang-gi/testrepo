@@ -9,21 +9,21 @@ spec:
   rules:
     - http:
         paths:
-          - path: /
+          - path: /main
             pathType: Prefix
             backend:
               service:
                 name: web-svc
                 port:
                   number: 80
-          - path: /
+          - path: /sign
             pathType: Prefix
             backend:
               service:
                 name: websign-svc
                 port:
                   number: 80
-          - path: /
+          - path: /order
             pathType: Prefix
             backend:
               service:
