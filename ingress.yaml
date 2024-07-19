@@ -15,21 +15,21 @@ spec:
               service:
                 name: web-svc
                 port:
-                  number: 80
+                  number: 31000
           - path: /sign
             pathType: Prefix
             backend:
               service:
                 name: websign-svc
                 port:
-                  number: 80
+                  number: 32000
           - path: /order
             pathType: Prefix
             backend:
               service:
                 name: weborder-svc
                 port:
-                  number: 80
+                  number: 33000
           - path: /tomcat
             pathType: Prefix
             backend:
