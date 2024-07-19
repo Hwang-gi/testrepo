@@ -30,3 +30,10 @@ spec:
                 name: weborder-svc
                 port:
                   number: 80
+          - path: /tomcat
+            pathType: Prefix
+            backend:
+              service:
+                name: was-svc
+                port:
+                  number: 8080
