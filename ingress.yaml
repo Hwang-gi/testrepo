@@ -7,7 +7,6 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  host: 10.100.100.100
     - http:
         paths:
           - path: /
