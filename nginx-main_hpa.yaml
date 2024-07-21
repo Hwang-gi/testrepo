@@ -9,4 +9,4 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: 1st-web
-  targetCPUUtilizationPercentage: 30
+  targetCPUUtilizationPercentage: 25
