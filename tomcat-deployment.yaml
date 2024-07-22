@@ -37,12 +37,9 @@ spec:
             initialDelaySeconds: 5
             periodSeconds: 10
           resources:
-            requests:
-              memory: 300Mi
-              cpu: 300M
             limits:
-              memory: 400Mi
-              cpu: 400m
+              memory: 300Mi
+              cpu: 300m
           volumeMounts:
             - name: pv-was
               mountPath: /1st-was
