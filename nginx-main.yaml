@@ -24,13 +24,10 @@ spec:
         name: web
         ports:
         - containerPort: 80
-        resources:
-          requests:
-            memory: 125Mi
-            cpu: 100m
+        resources
           limits:
-            memory: 250Mi
-            cpu: 200m
+            memory: 100Mi
+            cpu: 100m
         livenessProbe:
           httpGet:
             path: /
