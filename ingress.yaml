@@ -30,7 +30,7 @@ spec:
                 name: weborder-svc
                 port:
                   number: 80
-          - path: /
+          - path: /was
             pathType: Prefix
             backend:
               service:
