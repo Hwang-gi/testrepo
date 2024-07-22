@@ -30,10 +30,3 @@ spec:
                 name: weborder-svc
                 port:
                   number: 80
-          - path: /was
-            pathType: Prefix
-            backend:
-              service:
-                name: was-svc
-                port:
-                  number: 8080
