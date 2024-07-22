@@ -38,8 +38,8 @@ spec:
             periodSeconds: 10
           resources:
             limits:
-              memory: 256Mi
-              cpu: 200m
+              memory: 300Mi
+              cpu: 300m
           volumeMounts:
             - name: pv-was
               mountPath: /1st-was
