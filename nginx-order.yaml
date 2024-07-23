@@ -24,7 +24,7 @@ spec:
         name: order
         ports:
         - containerPort: 80
-        resources:m
+        resources:
           limits:
             memory: 128Mi
             cpu: 100m
