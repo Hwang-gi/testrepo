@@ -5,6 +5,7 @@ metadata:
   labels:
     app: web-app
     sign: sign-app
+    order: order-app
 ---
 apiVersion: v1
 kind: Node
@@ -12,10 +13,3 @@ metadata:
   name: k8s-worker2
   labels:
     app: was-app
----
-apiVersion: v1
-kind: Node
-metadata:
-  name: k8s-worker3
-  labels:
-    order: order-app
