@@ -3,7 +3,9 @@ kind: Deployment
 metadata:
   name: 1st-was
   labels:
+  
 # nginx-main deployment와 같은 key 사용 (label's value만 다르게 설정)
+
     app: was-app
 spec:
   replicas: 3
@@ -14,7 +16,6 @@ spec:
   # 저희는 image를 통한 RollingUpdate를 테스트할 때 
   # Tomcat 컨테이너의 order.jsp 파일에 판매 중인 제품, 식품 이미지를 저장한 도커 이미지와
   # "SOLD OUT" 처리된 제품, 식품 이미지를 저장한 도커 이미지로 나누어 빌드 작업을 진행했습니다.
-  # 
   
   strategy:
     type: RollingUpdate
