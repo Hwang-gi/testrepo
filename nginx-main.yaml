@@ -31,7 +31,7 @@ spec:
           limits:
             memory: 128Mi
             cpu: 100m
-# 컨테이너 준비 상태 check
+# 컨테이너 실행 상태 check
         livenessProbe:
           httpGet:
             path: /
