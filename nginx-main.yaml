@@ -3,14 +3,16 @@ kind: Deployment
 metadata:
   name: 1st-web
   labels:
-    app: web-app # label을 web-app로 설정 (nginx-sign deployment, nginx-order deployment와 label 구분)
+    app: web-app # label을 web-app로 설정 
+                 # (nginx-sign deployment, nginx-order deployment와 label 구분)
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: web-app
       
-# RollingUpdate 전략 설정  -->  availabilty factor을 살리면서 무중단 update 목표했습니다.
+# RollingUpdate 전략 설정  
+# -->  가용성을 살리면서 무중단 배포가 진행되는 것을 목표로 했습니다.
 
   strategy:
     type: RollingUpdate
@@ -31,7 +33,7 @@ spec:
           limits:
             memory: 128Mi
             cpu: 100m
-# 컨테이너 실행 상태 check
+# 첫 시도에는 5초 후에, 이후 5초 간격으로 컨테이너의 실행 상태를 체크하도록 설정했습니다.
         livenessProbe:
           httpGet:
             path: /
@@ -39,7 +41,7 @@ spec:
           initialDelaySeconds: 5
           periodSeconds: 5
 
-# 컨테이너 준비 상태 check
+# 처음에는 5초 후에, 이후 5초 간격으로 컨테이너 준비 상태를 체크하도록 설정했습니다.
         readinessProbe:
           httpGet:
             path: /
