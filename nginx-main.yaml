@@ -10,7 +10,8 @@ spec:
     matchLabels:
       app: web-app
       
-# RollingUpdate 전략 설정
+# RollingUpdate 전략 설정  -->  availabilty factor을 살리면서 무중단 update 목표했습니다.
+
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -65,7 +66,7 @@ metadata:
   name: web-svc
 spec:
   selector:
-    app: web-app # Node Selector를 사용하여 "web-app" label로 등록된 Pod만 service 처리
+    app: web-app # Node Selector를 사용하여 "web-app" label로 등록된 Pod만 service 처리되게 하여 node의 scheduling을 효율적으로 관리하고자 함.
   type: NodePort 
   clusterIP: 10.100.100.100
   ports:
