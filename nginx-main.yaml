@@ -4,7 +4,9 @@ metadata:
   name: 1st-web
   labels:
     app: web-app # label을 web-app로 설정 
-                 # (nginx-sign deployment, nginx-order deployment와 label 구분)
+                 # nginx-sign deployment, nginx-order deployment와 label 구분
+                 # nginx-sign 디플로이먼트 레이블 정보: sign: sign-app
+                 # nginx-order 디플로이먼트 레이블 정보: order: order-app
 spec:
   replicas: 3
   selector:
