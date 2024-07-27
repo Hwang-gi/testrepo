@@ -3,12 +3,14 @@ kind: Deployment
 metadata:
   name: 1st-web
   labels:
-    app: web-app
+    app: web-app # label을 web-app로 설정 (nginx-sign deployment, nginx-order deployment와 label 구분)
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: web-app
+      
+# RollingUpdate 전략 설정
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -28,18 +30,23 @@ spec:
           limits:
             memory: 128Mi
             cpu: 100m
+# 컨테이너 준비 상태 check
         livenessProbe:
           httpGet:
             path: /
             port: 80
           initialDelaySeconds: 5
           periodSeconds: 5
+
+# 컨테이너 준비 상태 check
         readinessProbe:
           httpGet:
             path: /
             port: 80
           initialDelaySeconds: 5
           periodSeconds: 5
+
+
         volumeMounts:
         - name: pvcweb
           mountPath: /1st-web
@@ -58,8 +65,8 @@ metadata:
   name: web-svc
 spec:
   selector:
-    app: web-app
-  type: NodePort
+    app: web-app # Node Selector를 사용하여 "web-app" label로 등록된 Pod만 service 처리
+  type: NodePort 
   clusterIP: 10.100.100.100
   ports:
     - protocol: TCP
