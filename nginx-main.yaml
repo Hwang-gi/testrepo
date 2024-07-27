@@ -66,7 +66,8 @@ metadata:
   name: web-svc
 spec:
   selector:
-    app: web-app # Node Selector를 사용하여 "web-app" label로 등록된 Pod만 service 처리되게 하여 node의 scheduling을 효율적으로 관리하고자 함.
+    app: web-app # Node Selector를 사용하여 "web-app" label로 등록된 Pod만 service 처리되게 하여
+                 # node의 scheduling을 효율적으로 관리하고자 하였습니다.
   type: NodePort 
   clusterIP: 10.100.100.100
   ports:
