@@ -51,8 +51,10 @@ spec:
             initialDelaySeconds: 5
             periodSeconds: 10
 
-# web service에 필요한 file들 (modal.html, 각 jsp file, ...)을 tomcat server에 모두 저장
-# 많은 부하가 쏠리므로 최대 resource usage을 400Mi, 400M로 높게 설정
+# web service에 필요한 file들 (modal.html, 각 jsp file, ...)을 
+# tomcat server에 모두 저장됩니다.
+# 많은 부하가 쏠리므로 최대 resource usage을 400Mi, 400M로 
+# 높게 설정헸습니다.
 
           resources:
             limits:
@@ -76,7 +78,17 @@ metadata:
   name: was-svc
 spec:
   selector:
+  
+    # 노드가 app: was-app 레이블만 서비스 처리를 할 수 있도록 적용했습니다.
+    # 리소스 사용량을 통제하여 가용성을 높였습니다.
+    
     app: was-app
+    
+  # 서비스 타입은 Tomcat에 ClusterIP로 설정하여
+  # 클러스터 내부에서만 접근이 가능하도록 설정했습니다.
+  # web service를 진행하는 파일들이 대거 저장되어 있기 때문에
+  # 보안성을 높였습니다.
+  
   type: ClusterIP
   clusterIP: 10.100.100.103
   ports:
