@@ -52,12 +52,12 @@ spec:
             periodSeconds: 10
 
 # web service에 필요한 file들 (modal.html, 각 jsp file, ...)을 tomcat server에 모두 저장
-# 많은 부하가 쏠리므로 최대 resource usage을 높게 설정
+# 많은 부하가 쏠리므로 최대 resource usage을 400Mi, 400M로 높게 설정
 
           resources:
             limits:
-              memory: 350Mi
-              cpu: 350m
+              memory: 400Mi
+              cpu: 400m
           volumeMounts:
             - name: pv-was
               mountPath: /1st-was
