@@ -23,7 +23,7 @@ spec:
             name: trd-index-svc
             port:
               number: 80
-  - host: gitchang.store
+  - host: gitchang.store
     http:
       paths:
       - path: /
@@ -32,4 +32,4 @@ spec:
           service:
             name: trd-doc-svc
             port:
-              number: 80  
+              number: 80
