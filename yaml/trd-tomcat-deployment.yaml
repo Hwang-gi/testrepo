@@ -31,15 +31,15 @@ spec:
                 values:
                 - index-app
             topologyKey: "kubernetes.io/hostname"
-#      topologySpreadConstraints:
-#      - maxSkew: 1
-#        topologyKey: kubernetes.io/hostname
-#        whenUnsatisfiable: DoNotSchedule
-#        labelSelector:
-#          matchLabels:
-#            app: index-app
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: DoNotSchedule
+        labelSelector:
+          matchLabels:
+            app: index-app
       containers:
-      - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:trdservicev3.6
+      - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:trdservicev3.7
         name: trd-tomindex
         ports:
         - containerPort: 8080
@@ -124,15 +124,15 @@ spec:
                 values:
                 - sign-app
             topologyKey: "kubernetes.io/hostname"
- #     topologySpreadConstraints:
- #     - maxSkew: 1
- #       topologyKey: kubernetes.io/hostname
- #       whenUnsatisfiable: DoNotSchedule
- #       labelSelector:
- #         matchLabels:
- #           app: sign-app
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: DoNotSchedule
+        labelSelector:
+          matchLabels:
+            app: sign-app
       containers:
-      - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:trdservicev3.6
+      - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:trdservicev3.7
         name: tom-sign
         ports:
         - containerPort: 8080
@@ -217,15 +217,15 @@ spec:
                 values:
                 - login-app
             topologyKey: "kubernetes.io/hostname"
- #     topologySpreadConstraints:
- #     - maxSkew: 1
- #       topologyKey: kubernetes.io/hostname
- #       whenUnsatisfiable: DoNotSchedule
- #       labelSelector:
- #         matchLabels:
- #           app: login-app
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: DoNotSchedule
+        labelSelector:
+          matchLabels:
+            app: login-app
       containers:
-      - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:trdservicev3.6
+      - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:trdservicev3.7
         name: tomalb
         ports:
         - containerPort: 8080
@@ -318,7 +318,7 @@ spec:
           matchLabels:
             app: doc-app
       containers:
-      - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:trdservicev3.6
+      - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:trdservicev3.7
         name: trd-tomdoc
         ports:
         - containerPort: 8080
@@ -370,15 +370,15 @@ spec:
                 values:
                 - docrg-app
             topologyKey: "kubernetes.io/hostname"
-#      topologySpreadConstraints:
-#      - maxSkew: 1
-#        topologyKey: kubernetes.io/hostname
-#        whenUnsatisfiable: DoNotSchedule
-#        labelSelector:
-#          matchLabels:
-#            app: docrg-app
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: DoNotSchedule
+        labelSelector:
+          matchLabels:
+            app: docrg-app
       containers:
-      - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:trdservicev3.6
+      - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:trdservicev3.7
         name: trd-tomdocrg
         ports:
         - containerPort: 8080
