@@ -1,4 +1,4 @@
-# nginx-index.yaml
+# trd-nginx-index.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -23,7 +23,6 @@ spec:
     spec:
       affinity:
         podAntiAffinity:
-          # Ensure that Pods with the label `app=index-app` are not scheduled on the same node
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchExpressions:
@@ -32,6 +31,13 @@ spec:
                 values:
                 - index-app
             topologyKey: "kubernetes.io/hostname"
+        topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: "ScheduleAnyway"
+          labelSelector:
+            matchLabels:
+              app: index-app
       containers:
       - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:nginxindexv1.0
         name: trd-index
@@ -74,11 +80,10 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-  clusterIP: 172.20.10.10
-  
+
 ---
 
-# nginx-sign.yaml
+# trd-nginx-sign.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -111,6 +116,13 @@ spec:
                 values:
                 - sign-app
             topologyKey: "kubernetes.io/hostname"
+        topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: "ScheduleAnyway"
+          labelSelector:
+            matchLabels:
+              app: sign-app
       containers:
       - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:nginxsignv1.0
         name: trd-sign
@@ -153,11 +165,8 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-  clusterIP: 172.20.10.30
 
----
-
-# nginx-login.yaml
+# trd-nginx-login.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -190,6 +199,13 @@ spec:
                 values:
                 - login-app
             topologyKey: "kubernetes.io/hostname"
+        topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: "ScheduleAnyway"
+          labelSelector:
+            matchLabels:
+              app: login-app
       containers:
       - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:nginxloginv1.0
         name: trd-login
@@ -232,11 +248,10 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-  clusterIP: 172.20.10.50
 
 ---
 
-# nginx-doc.yaml
+# trd-nginx-doc.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -269,6 +284,13 @@ spec:
                 values:
                 - doc-app
             topologyKey: "kubernetes.io/hostname"
+        topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: "ScheduleAnyway"
+          labelSelector:
+            matchLabels:
+              app: doc-app
       containers:
       - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:nginxdocv1.0
         name: trd-doc
@@ -311,11 +333,10 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-  clusterIP: 172.20.10.70
 
 ---
 
-# nginx-docrg.yaml
+# trd-nginx-docrg.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -348,6 +369,13 @@ spec:
                 values:
                 - docrg-app
             topologyKey: "kubernetes.io/hostname"
+        topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: "ScheduleAnyway"
+          labelSelector:
+            matchLabels:
+              app: docrg-app
       containers:
       - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:nginxdocrgv1.0
         name: trd-docrg
@@ -390,4 +418,3 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-  clusterIP: 172.20.10.90
