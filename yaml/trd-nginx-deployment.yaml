@@ -31,13 +31,13 @@ spec:
                 values:
                 - index-app
             topologyKey: "kubernetes.io/hostname"
-        topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: "ScheduleAnyway"
-          labelSelector:
-            matchLabels:
-              app: index-app
+#        topologySpreadConstraints:
+#        - maxSkew: 1
+#          topologyKey: "kubernetes.io/hostname"
+#          whenUnsatisfiable: "ScheduleAnyway"
+#          labelSelector:
+#            matchLabels:
+#              app: index-app
       containers:
       - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:nginxindexv1.0
         name: trd-index
@@ -52,13 +52,13 @@ spec:
             cpu: 100m
         livenessProbe:
           httpGet:
-            path: /index.jsp
+            path: /
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
         readinessProbe:
           httpGet:
-            path: /index.jsp
+            path: /
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
@@ -116,13 +116,13 @@ spec:
                 values:
                 - sign-app
             topologyKey: "kubernetes.io/hostname"
-        topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: "ScheduleAnyway"
-          labelSelector:
-            matchLabels:
-              app: sign-app
+#        topologySpreadConstraints:
+#        - maxSkew: 1
+#          topologyKey: "kubernetes.io/hostname"
+#          whenUnsatisfiable: "ScheduleAnyway"
+#          labelSelector:
+#            matchLabels:
+#              app: sign-app
       containers:
       - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:nginxsignv1.0
         name: trd-sign
@@ -137,13 +137,13 @@ spec:
             cpu: 100m
         livenessProbe:
           httpGet:
-            path: /signup.jsp
+            path: /
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
         readinessProbe:
           httpGet:
-            path: /signup.jsp
+            path: /
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
@@ -165,6 +165,7 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
+---
 
 # trd-nginx-login.yaml
 apiVersion: apps/v1
@@ -220,7 +221,7 @@ spec:
             cpu: 200m
         livenessProbe:
           httpGet:
-            path: /login.jsp
+            path: /
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
@@ -305,13 +306,13 @@ spec:
             cpu: 100m
         livenessProbe:
           httpGet:
-            path: /docs-search.jsp
+            path: /
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
         readinessProbe:
           httpGet:
-            path: /docs-search.jsp
+            path: /
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
@@ -369,13 +370,13 @@ spec:
                 values:
                 - docrg-app
             topologyKey: "kubernetes.io/hostname"
-        topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: "ScheduleAnyway"
-          labelSelector:
-            matchLabels:
-              app: docrg-app
+#        topologySpreadConstraints:
+#        - maxSkew: 1
+#          topologyKey: "kubernetes.io/hostname"
+#          whenUnsatisfiable: "ScheduleAnyway"
+#          labelSelector:
+#            matchLabels:
+#              app: docrg-app
       containers:
       - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:nginxdocrgv1.0
         name: trd-docrg
@@ -390,13 +391,13 @@ spec:
             cpu: 100m
         livenessProbe:
           httpGet:
-            path: /docs-register.jsp
+            path: /
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
         readinessProbe:
           httpGet:
-            path: /docs-register.jsp
+            path: /
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
