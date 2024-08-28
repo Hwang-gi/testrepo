@@ -52,13 +52,13 @@ spec:
             cpu: 100m
         livenessProbe:
           httpGet:
-            path: /
+            path: /index.jsp
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
         readinessProbe:
           httpGet:
-            path: /
+            path: /index.jsp
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
@@ -137,13 +137,13 @@ spec:
             cpu: 100m
         livenessProbe:
           httpGet:
-            path: /
+            path: /signup.jsp
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
         readinessProbe:
           httpGet:
-            path: /
+            path: /signup.jsp
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
@@ -220,13 +220,13 @@ spec:
             cpu: 200m
         livenessProbe:
           httpGet:
-            path: /
+            path: /login.jsp
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
         readinessProbe:
           httpGet:
-            path: /
+            path: /login.jsp
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
@@ -305,13 +305,13 @@ spec:
             cpu: 100m
         livenessProbe:
           httpGet:
-            path: /
+            path: /docs-search.jsp
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
         readinessProbe:
           httpGet:
-            path: /
+            path: /docs-search.jsp
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
@@ -390,13 +390,13 @@ spec:
             cpu: 100m
         livenessProbe:
           httpGet:
-            path: /
+            path: /docs-register.jsp
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
         readinessProbe:
           httpGet:
-            path: /
+            path: /docs-register.jsp
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10
