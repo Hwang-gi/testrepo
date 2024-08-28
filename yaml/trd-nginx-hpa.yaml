@@ -26,7 +26,7 @@ spec:
     name: trd-prd-sign
   targetCPUUtilizationPercentage: 50
 ---
-  apiVersion: autoscaling/v1
+apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: trd-prd-login-hpa
@@ -40,7 +40,7 @@ spec:
     name: trd-prd-login
   targetCPUUtilizationPercentage: 50
 ---
-  apiVersion: autoscaling/v1
+apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: trd-prd-doc-hpa
