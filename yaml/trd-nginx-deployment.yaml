@@ -31,13 +31,13 @@ spec:
                 values:
                 - index-app
             topologyKey: "kubernetes.io/hostname"
-        topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: "ScheduleAnyway"
-          labelSelector:
-            matchLabels:
-              app: index-app
+#        topologySpreadConstraints:
+#        - maxSkew: 1
+#          topologyKey: "kubernetes.io/hostname"
+#          whenUnsatisfiable: "ScheduleAnyway"
+#          labelSelector:
+#            matchLabels:
+#              app: index-app
       containers:
       - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:nginxindexv1.0
         name: trd-index
@@ -116,13 +116,13 @@ spec:
                 values:
                 - sign-app
             topologyKey: "kubernetes.io/hostname"
-        topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: "ScheduleAnyway"
-          labelSelector:
-            matchLabels:
-              app: sign-app
+#        topologySpreadConstraints:
+#        - maxSkew: 1
+#          topologyKey: "kubernetes.io/hostname"
+#          whenUnsatisfiable: "ScheduleAnyway"
+#          labelSelector:
+#            matchLabels:
+#              app: sign-app
       containers:
       - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:nginxsignv1.0
         name: trd-sign
@@ -200,13 +200,13 @@ spec:
                 values:
                 - login-app
             topologyKey: "kubernetes.io/hostname"
-        topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: "ScheduleAnyway"
-          labelSelector:
-            matchLabels:
-              app: login-app
+#        topologySpreadConstraints:
+#        - maxSkew: 1
+#          topologyKey: "kubernetes.io/hostname"
+#          whenUnsatisfiable: "ScheduleAnyway"
+#          labelSelector:
+#            matchLabels:
+#              app: login-app
       containers:
       - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:nginxloginv1.0
         name: trd-login
@@ -285,13 +285,13 @@ spec:
                 values:
                 - doc-app
             topologyKey: "kubernetes.io/hostname"
-        topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: "ScheduleAnyway"
-          labelSelector:
-            matchLabels:
-              app: doc-app
+#        topologySpreadConstraints:
+#        - maxSkew: 1
+#          topologyKey: "kubernetes.io/hostname"
+#          whenUnsatisfiable: "ScheduleAnyway"
+#          labelSelector:
+#            matchLabels:
+#              app: doc-app
       containers:
       - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:nginxdocv1.0
         name: trd-doc
@@ -370,13 +370,13 @@ spec:
                 values:
                 - docrg-app
             topologyKey: "kubernetes.io/hostname"
-        topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: "kubernetes.io/hostname"
-          whenUnsatisfiable: "ScheduleAnyway"
-          labelSelector:
-            matchLabels:
-              app: docrg-app
+#        topologySpreadConstraints:
+#        - maxSkew: 1
+#          topologyKey: "kubernetes.io/hostname"
+#          whenUnsatisfiable: "ScheduleAnyway"
+#          labelSelector:
+#            matchLabels:
+#              app: docrg-app
       containers:
       - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:nginxdocrgv1.0
         name: trd-docrg
