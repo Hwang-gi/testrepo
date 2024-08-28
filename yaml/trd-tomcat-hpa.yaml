@@ -53,7 +53,7 @@ spec:
     kind: Deployment
     name: trd-prd-tomdoc
   targetCPUUtilizationPercentage: 50
-  ---
+---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
