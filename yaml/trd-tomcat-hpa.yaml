@@ -26,7 +26,7 @@ spec:
     name: trd-prd-tomsign
   targetCPUUtilizationPercentage: 50
 ---
-  apiVersion: autoscaling/v1
+apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: trd-prd-tomlogin-hpa
@@ -40,7 +40,7 @@ spec:
     name: trd-prd-tomlogin
   targetCPUUtilizationPercentage: 50
 ---
-  apiVersion: autoscaling/v1
+apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   name: trd-prd-tomdoc-hpa
