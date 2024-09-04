@@ -38,7 +38,7 @@ spec:
           matchLabels:
             app: index-app
       containers:
-      - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:trdrollbackv1.0
+      - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/trd-dockerhub:trdrollingupdatev1.3
         name: trd-tomindex
         ports:
         - containerPort: 8080
