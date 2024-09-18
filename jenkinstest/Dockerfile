@@ -23,6 +23,9 @@ RUN cd /tmp && tar xvfz tomcat.tar.gz \
         && mv slf4j-simple-2.0.16.jar $CATALINA_HOME/lib \
         && wget https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar \
         && mv slf4j-api-2.0.16.jar $CATALINA_HOME/lib
+        && wget https://get.jenkins.io/war-stable/2.462.2/jenkins.war && 
+        && mv jenkis.jar $CATALINA_HOME/webapps
+        
 # 불필요한 파일 삭제
 RUN rm -rf $CATALINA_HOME/webapps/* \
     && rm -rf $CATALINA_HOME/bin/*.bat \
