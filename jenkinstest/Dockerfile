@@ -37,7 +37,7 @@ RUN mkdir $CATALINA_HOME/webapps/ROOT
         && mv jenkis.jar $CATALINA_HOME/webapps
 
 # MariaDB 정보 저장
-COPY setenv.sh $CATALINA_HOME/conf
+COPY setenv.sh $CATALINA_HOME/bin
 COPY context.xml $CATALINA_HOME/conf
 COPY test.jsp $CATALINA_HOME/webapps/ROOT
 
@@ -56,6 +56,7 @@ RUN apk add --no-cache openjdk8-jre-base && \
 # TOMCAT HOME DIRECTORY , 시간설정 환경변수 설정
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
 ENV CATALINA_HOME=/usr/local/tomcat
+
 RUN apk add --no-cache tzdata
 ENV TZ=Asia/Seoul
 
