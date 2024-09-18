@@ -1,0 +1,1 @@
+export CATALINA_OPTS="$CATALINA_OPTS -Djenkins.model.Jenkins.installState=UNINITIALIZED -Dhttp.port=9090"
