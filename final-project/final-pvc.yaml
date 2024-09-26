@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-finalindex
+  name: pv-finalmain
   namespace: final-backend # final-backend namespace에 volume 생성
 spec:
   capacity:
@@ -19,7 +19,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: pvc-finalindex
+  name: pvc-finalmain
   namespace: final-backend # PersistentVolumeClaim 역시 같은 namespace에 생성
 spec:
   accessModes:
@@ -33,7 +33,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-finalsign
+  name: pv-finalsignup
   namespace: final-backend
 spec:
   capacity:
@@ -51,7 +51,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: pvc-finalsign
+  name: pvc-finalsignup
   namespace: final-backend
 spec:
   accessModes:
@@ -98,7 +98,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-finalbook
+  name: pv-finallogout
   namespace: final-backend
 spec:
   capacity:
@@ -115,7 +115,97 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: pvc-finalbook
+  name: pvc-finallogout
+  namespace: final-backend
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: efs-sc
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-finalorder
+  namespace: final-backend
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: efs-sc
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: fs-03238924502102f77
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-finalorder
+  namespace: final-backend
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: efs-sc
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-finalreservation
+  namespace: final-backend
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: efs-sc
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: fs-03238924502102f77
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-finalreservation
+  namespace: final-backend
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: efs-sc
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-finalreservationinfo
+  namespace: final-backend
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: efs-sc
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: fs-03238924502102f77
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-finalreservationinfo
   namespace: final-backend
 spec:
   accessModes:
