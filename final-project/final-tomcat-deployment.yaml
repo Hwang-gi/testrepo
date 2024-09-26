@@ -1,0 +1,515 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: final-prd-tommain
+  namespace: final-backend
+  labels:
+    app: main-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: main-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  template:
+    metadata:
+      labels:
+        app: main-app
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - main-app
+              topologyKey: "kubernetes.io/hostname"
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: "ScheduleAnyway"
+          labelSelector:
+            matchLabels:
+              app: main-app
+      containers:
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatmainv1.0
+          name: final-tommain
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: 256Mi
+              cpu: 200m
+            limits:
+              memory: 256Mi
+              cpu: 200m
+          livenessProbe:
+            httpGet:
+              path: /main.jsp
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /main.jsp
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 5
+          volumeMounts:
+            - name: pv-finalmain
+              mountPath: /data/main
+      volumes:
+        - name: pv-finalmain
+          persistentVolumeClaim:
+            claimName: pvc-finalmain
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: final-prd-tomsignup
+  namespace: final-backend
+  labels:
+    app: signup-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: signup-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  template:
+    metadata:
+      labels:
+        app: signup-app
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - signup-app
+              topologyKey: "kubernetes.io/hostname"
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: "DoNotSchedule"
+          labelSelector:
+            matchLabels:
+              app: signup-app
+      containers:
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatsignupv1.0
+          name: final-tomsignup
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: 256Mi
+              cpu: 200m
+            limits:
+              memory: 256Mi
+              cpu: 200m
+          livenessProbe:
+            httpGet:
+              path: /signup.jsp
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /signup.jsp
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 5
+          volumeMounts:
+            - name: pv-finalsignup
+              mountPath: /data/signup
+      volumes:
+        - name: pv-finalsignup
+          persistentVolumeClaim:
+            claimName: pvc-finalsignup
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: final-prd-tomlogin
+  namespace: final-backend
+  labels:
+    app: login-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: login-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  template:
+    metadata:
+      labels:
+        app: login-app
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - login-app
+              topologyKey: "kubernetes.io/hostname"
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: "DoNotSchedule"
+          labelSelector:
+            matchLabels:
+              app: login-app
+      containers:
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatloginv1.0
+          name: final-tomlogin
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: 256Mi
+              cpu: 200m
+            limits:
+              memory: 256Mi
+              cpu: 200m
+          livenessProbe:
+            httpGet:
+              path: /login.jsp
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /login.jsp
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 5
+          volumeMounts:
+            - name: pv-finallogin
+              mountPath: /data/login
+      volumes:
+        - name: pv-finallogin
+          persistentVolumeClaim:
+            claimName: pvc-finallogin
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: final-prd-tomlogout
+  namespace: final-backend
+  labels:
+    app: logout-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: logout-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  template:
+    metadata:
+      labels:
+        app: logout-app
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - logout-app
+              topologyKey: "kubernetes.io/hostname"
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: "ScheduleAnyway"
+          labelSelector:
+            matchLabels:
+              app: logout-app
+      containers:
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatlogoutv1.0
+          name: final-tomlogout
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: 256Mi
+              cpu: 200m
+            limits:
+              memory: 256Mi
+              cpu: 200m
+          livenessProbe:
+            httpGet:
+              path: /logout.jsp
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /logout.jsp
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 5
+          volumeMounts:
+            - name: pv-finallogout
+              mountPath: /data/logout
+      volumes:
+        - name: pv-finallogout
+          persistentVolumeClaim:
+            claimName: pvc-finallogout
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: final-prd-tomorder
+  namespace: final-backend
+  labels:
+    app: order-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: order-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  template:
+    metadata:
+      labels:
+        app: order-app
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - order-app
+              topologyKey: "kubernetes.io/hostname"
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: "ScheduleAnyway"
+          labelSelector:
+            matchLabels:
+              app: order-app
+      containers:
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatorderv1.0
+          name: final-tomorder
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: 256Mi
+              cpu: 200m
+            limits:
+              memory: 256Mi
+              cpu: 200m
+          livenessProbe:
+            httpGet:
+              path: /order.jsp
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /order.jsp
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 5
+          volumeMounts:
+            - name: pv-finalorder
+              mountPath: /data/order
+      volumes:
+        - name: pv-finalorder
+          persistentVolumeClaim:
+            claimName: pvc-finalorder
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: final-prd-tomreservation
+  namespace: final-backend
+  labels:
+    app: reservation-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: reservation-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  template:
+    metadata:
+      labels:
+        app: reservation-app
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - reservation-app
+              topologyKey: "kubernetes.io/hostname"
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: "ScheduleAnyway"
+          labelSelector:
+            matchLabels:
+              app: reservation-app
+      containers:
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatreservationv1.0
+          name: final-tomreservation
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: 256Mi
+              cpu: 200m
+            limits:
+              memory: 256Mi
+              cpu: 200m
+          livenessProbe:
+            httpGet:
+              path: /reservation.jsp
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /reservation.jsp
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 5
+          volumeMounts:
+            - name: pv-finalreservation
+              mountPath: /data/reservation
+      volumes:
+        - name: pv-finalreservation
+          persistentVolumeClaim:
+            claimName: pvc-finalreservation
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: final-prd-tomreservation
+  namespace: final-backend
+  labels:
+    app: reservationinfo-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: reservationinfo-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  template:
+    metadata:
+      labels:
+        app: reservationinfo-app
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - reservationinfo-app
+              topologyKey: "kubernetes.io/hostname"
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: "ScheduleAnyway"
+          labelSelector:
+            matchLabels:
+              app: reservationinfo-app
+      containers:
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatreservationinfov1.0
+          name: final-tomreservationinfo
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: 256Mi
+              cpu: 200m
+            limits:
+              memory: 256Mi
+              cpu: 200m
+          livenessProbe:
+            httpGet:
+              path: /reservation_lnfo.jsp
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /reservation_lnfo.jsp
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 5
+          volumeMounts:
+            - name: pv-finalreservationinfo
+              mountPath: /data/reservationinfo
+      volumes:
+        - name: pv-finalreservationinfo
+          persistentVolumeClaim:
+            claimName: pvc-finalreservationinfo
