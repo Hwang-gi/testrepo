@@ -183,13 +183,13 @@ spec:
               cpu: 200m
           livenessProbe:
             httpGet:
-              path: /main.jsp
+              path: /login.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /main.jsp
+              path: /login.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
