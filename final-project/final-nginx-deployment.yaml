@@ -38,7 +38,7 @@ spec:
             matchLabels:
               app: main-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxmainv1.0
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxmainv1.1
           name: final-main
           ports:
             - containerPort: 80
@@ -104,7 +104,7 @@ spec:
             matchLabels:
               app: signup-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxsignupv1.0
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxsignupv1.1
           name: final-signup
           ports:
             - containerPort: 80
@@ -170,7 +170,7 @@ spec:
             matchLabels:
               app: login-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxloginv1.0
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxloginv1.1
           name: final-login
           ports:
             - containerPort: 80
@@ -236,7 +236,7 @@ spec:
             matchLabels:
               app: logout-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxlogoutv1.0
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxlogoutv1.1
           name: final-logout
           ports:
             - containerPort: 80
@@ -302,7 +302,7 @@ spec:
             matchLabels:
               app: order-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxorderv1.0
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxorderv1.1
           name: final-order
           ports:
             - containerPort: 80
@@ -368,7 +368,7 @@ spec:
             matchLabels:
               app: reservation-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxreservation1.0
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxreservation1.1
           name: final-reservation
           ports:
             - containerPort: 80
@@ -434,7 +434,7 @@ spec:
             matchLabels:
               app: reservationinfo-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxreservationinfov1.0
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxreservationinfov1.1
           name: final-reservationinfo
           ports:
             - containerPort: 80
