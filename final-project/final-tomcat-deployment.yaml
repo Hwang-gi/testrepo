@@ -334,7 +334,7 @@ spec:
             matchLabels:
               app: order-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatorderv1.0
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatorderbeforev1.0
           name: final-tomorder
           ports:
             - containerPort: 8080
