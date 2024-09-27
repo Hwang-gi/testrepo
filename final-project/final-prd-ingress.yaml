@@ -16,49 +16,49 @@ spec:
     - host: www.gitchang.store
       http:
         paths:
-          - path: /ROOT/main.jsp
+          - path: /main.jsp
             pathType: Prefix
             backend:
               service:
                 name: final-main-svc
                 port:
                   number: 80
-          - path: /ROOT/signup.jsp
+          - path: /signup.jsp
             pathType: Prefix
             backend:
               service:
                 name: final-signup-svc
                 port:
                   number: 80
-          - path: /ROOT/login.jsp
+          - path: /login.jsp
             pathType: Prefix
             backend:
               service:
                 name: final-login-svc
                 port:
                   number: 80
-          - path: /ROOT/logout.jsp
+          - path: /logout.jsp
             pathType: Prefix
             backend:
               service:
                 name: final-logout-svc
                 port:
                   number: 80
-          - path: /ROOT/order.jsp
+          - path: /order.jsp
             pathType: Prefix
             backend:
               service:
                 name: final-order-svc
                 port:
                   number: 80
-          - path: /ROOT/reservation.jsp
+          - path: /reservation.jsp
             pathType: Prefix
             backend:
               service:
                 name: final-reservation-svc
                 port:
                   number: 80
-          - path: /ROOT/reservation_lnfo.jsp
+          - path: /reservation_lnfo.jsp
             pathType: Prefix
             backend:
               service:
