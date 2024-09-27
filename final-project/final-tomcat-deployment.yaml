@@ -51,13 +51,13 @@ spec:
               cpu: 200m
           livenessProbe:
             httpGet:
-              path: /ROOT/main.jsp
+              path: /main.jsp
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /ROOT/main.jsp
+              path: /main.jsp
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
@@ -125,13 +125,13 @@ spec:
               cpu: 200m
           livenessProbe:
             httpGet:
-              path: /ROOT/signup.jsp
+              path: /signup.jsp
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /ROOT/signup.jsp
+              path: /signup.jsp
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
@@ -199,13 +199,13 @@ spec:
               cpu: 200m
           livenessProbe:
             httpGet:
-              path: /ROOT/login.jsp
+              path: /login.jsp
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /ROOT/login.jsp
+              path: /login.jsp
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
@@ -273,13 +273,13 @@ spec:
               cpu: 200m
           livenessProbe:
             httpGet:
-              path: /ROOT/logout.jsp
+              path: /logout.jsp
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /ROOT/logout.jsp
+              path: /logout.jsp
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
@@ -347,13 +347,13 @@ spec:
               cpu: 200m
           livenessProbe:
             httpGet:
-              path: /ROOT/order.jsp
+              path: /order.jsp
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /ROOT/order.jsp
+              path: /order.jsp
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
@@ -421,13 +421,13 @@ spec:
               cpu: 200m
           livenessProbe:
             httpGet:
-              path: /ROOT/reservation.jsp
+              path: /reservation.jsp
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /ROOT/reservation.jsp
+              path: /reservation.jsp
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
@@ -494,13 +494,13 @@ spec:
               cpu: 200m
           livenessProbe:
             httpGet:
-              path: /ROOT/reservation_lnfo.jsp
+              path: /reservation_lnfo.jsp
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /ROOT/reservation_lnfo.jsp
+              path: /reservation_lnfo.jsp
               port: 8080
             initialDelaySeconds: 60
             periodSeconds: 10
