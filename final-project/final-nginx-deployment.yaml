@@ -51,13 +51,13 @@ spec:
               cpu: 100m
           livenessProbe:
             httpGet:
-              path: /ROOT/main.jsp
+              path: /main.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /ROOT/main.jsp
+              path: /main.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
@@ -117,13 +117,13 @@ spec:
               cpu: 100m
           livenessProbe:
             httpGet:
-              path: /ROOT/signup.jsp
+              path: /signup.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /ROOT/signup.jsp
+              path: /signup.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
@@ -183,13 +183,13 @@ spec:
               cpu: 100m
           livenessProbe:
             httpGet:
-              path: /ROOT/login.jsp
+              path: /login.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /ROOT/login.jsp
+              path: /login.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
@@ -249,13 +249,13 @@ spec:
               cpu: 100m
           livenessProbe:
             httpGet:
-              path: /ROOT/logout.jsp
+              path: /logout.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /ROOT/logout.jsp
+              path: /logout.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
@@ -315,13 +315,13 @@ spec:
               cpu: 100m
           livenessProbe:
             httpGet:
-              path: /ROOT/order.jsp
+              path: /order.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /ROOT/order.jsp
+              path: /order.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
@@ -381,13 +381,13 @@ spec:
               cpu: 100m
           livenessProbe:
             httpGet:
-              path: /ROOT/reservation.jsp
+              path: /reservation.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /ROOT/reservation.jsp
+              path: /reservation.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
@@ -447,13 +447,13 @@ spec:
               cpu: 100m
           livenessProbe:
             httpGet:
-              path: /ROOT/reservation_lnfo.jsp # 이거 소문자 알파벳 "l"입니다.
+              path: /reservation_lnfo.jsp # 이거 소문자 알파벳 "l"입니다.
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /ROOT/reservation_lnfo.jsp
+              path: /reservation_lnfo.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
