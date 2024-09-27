@@ -368,7 +368,7 @@ spec:
             matchLabels:
               app: reservation-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxreservation1.1
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxreservationv1.1
           name: final-reservation
           ports:
             - containerPort: 80
