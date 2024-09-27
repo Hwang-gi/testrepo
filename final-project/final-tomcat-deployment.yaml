@@ -49,20 +49,20 @@ spec:
             limits:
               memory: 256Mi
               cpu: 200m
-          livenessProbe:
-            httpGet:
-              path: /main.jsp
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /main.jsp
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
+          # livenessProbe:
+          #   httpGet:
+          #     path: /main.jsp
+          #     port: 8080
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /main.jsp
+          #     port: 8080
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          #   successThreshold: 1
+          #   failureThreshold: 5
           volumeMounts:
             - name: pv-finalmain
               mountPath: /data/main
@@ -123,20 +123,20 @@ spec:
             limits:
               memory: 256Mi
               cpu: 200m
-          livenessProbe:
-            httpGet:
-              path: /signup.jsp
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /signup.jsp
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
+          # livenessProbe:
+          #   httpGet:
+          #     path: /signup.jsp
+          #     port: 8080
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /signup.jsp
+          #     port: 8080
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          #   successThreshold: 1
+          #   failureThreshold: 5
           volumeMounts:
             - name: pv-finalsignup
               mountPath: /data/signup
@@ -197,20 +197,20 @@ spec:
             limits:
               memory: 256Mi
               cpu: 200m
-          livenessProbe:
-            httpGet:
-              path: /login.jsp
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /login.jsp
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
+          # livenessProbe:
+          #   httpGet:
+          #     path: /login.jsp
+          #     port: 8080
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /login.jsp
+          #     port: 8080
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          #   successThreshold: 1
+          #   failureThreshold: 5
           volumeMounts:
             - name: pv-finallogin
               mountPath: /data/login
@@ -271,20 +271,20 @@ spec:
             limits:
               memory: 256Mi
               cpu: 200m
-          livenessProbe:
-            httpGet:
-              path: /logout.jsp
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /logout.jsp
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
+          # livenessProbe:
+          #   httpGet:
+          #     path: /logout.jsp
+          #     port: 8080
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /logout.jsp
+          #     port: 8080
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          #   successThreshold: 1
+          #   failureThreshold: 5
           volumeMounts:
             - name: pv-finallogout
               mountPath: /data/logout
@@ -345,20 +345,20 @@ spec:
             limits:
               memory: 256Mi
               cpu: 200m
-          livenessProbe:
-            httpGet:
-              path: /order.jsp
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /order.jsp
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
+          # livenessProbe:
+          #   httpGet:
+          #     path: /order.jsp
+          #     port: 8080
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /order.jsp
+          #     port: 8080
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          #   successThreshold: 1
+          #   failureThreshold: 5
           volumeMounts:
             - name: pv-finalorder
               mountPath: /data/order
@@ -419,20 +419,20 @@ spec:
             limits:
               memory: 256Mi
               cpu: 200m
-          livenessProbe:
-            httpGet:
-              path: /reservation.jsp
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /reservation.jsp
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
+          # livenessProbe:
+          #   httpGet:
+          #     path: /reservation.jsp
+          #     port: 8080
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /reservation.jsp
+          #     port: 8080
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          #   successThreshold: 1
+          #   failureThreshold: 5
           volumeMounts:
             - name: pv-finalreservation
               mountPath: /data/reservation
@@ -492,20 +492,20 @@ spec:
             limits:
               memory: 256Mi
               cpu: 200m
-          livenessProbe:
-            httpGet:
-              path: /reservation_lnfo.jsp
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /reservation_lnfo.jsp
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
+          # livenessProbe:
+          #   httpGet:
+          #     path: /reservation_lnfo.jsp
+          #     port: 8080
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /reservation_lnfo.jsp
+          #     port: 8080
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          #   successThreshold: 1
+          #   failureThreshold: 5
           volumeMounts:
             - name: pv-finalreservationinfo
               mountPath: /data/reservationinfo
