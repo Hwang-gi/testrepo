@@ -49,20 +49,20 @@ spec:
             limits:
               memory: 128Mi
               cpu: 100m
-          livenessProbe:
-            httpGet:
-              path: /main.jsp
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /main.jsp
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
+          # livenessProbe:
+          #   httpGet:
+          #     path: /main.jsp
+          #     port: 80
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /main.jsp
+          #     port: 80
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          #   successThreshold: 1
+          #   failureThreshold: 5
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -115,20 +115,20 @@ spec:
             limits:
               memory: 128Mi
               cpu: 100m
-          livenessProbe:
-            httpGet:
-              path: /signup.jsp
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /signup.jsp
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
+          # livenessProbe:
+          #   httpGet:
+          #     path: /signup.jsp
+          #     port: 80
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /signup.jsp
+          #     port: 80
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          #   successThreshold: 1
+          #   failureThreshold: 5
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -176,25 +176,25 @@ spec:
             - containerPort: 80
           resources:
             requests:
-              memory: 256Mi
-              cpu: 200m
+              memory: 128Mi
+              cpu: 100m
             limits:
-              memory: 256Mi
-              cpu: 200m
-          livenessProbe:
-            httpGet:
-              path: /main.jsp
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /main.jsp
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
+              memory: 128Mi
+              cpu: 100m
+          # livenessProbe:
+          #   httpGet:
+          #     path: /main.jsp
+          #     port: 80
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /main.jsp
+          #     port: 80
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          #   successThreshold: 1
+          #   failureThreshold: 5
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -247,20 +247,20 @@ spec:
             limits:
               memory: 128Mi
               cpu: 100m
-          livenessProbe:
-            httpGet:
-              path: /logout.jsp
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /logout.jsp
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
+          # livenessProbe:
+          #   httpGet:
+          #     path: /logout.jsp
+          #     port: 80
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /logout.jsp
+          #     port: 80
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          #   successThreshold: 1
+          #   failureThreshold: 5
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -313,20 +313,20 @@ spec:
             limits:
               memory: 128Mi
               cpu: 100m
-          livenessProbe:
-            httpGet:
-              path: /order.jsp
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /order.jsp
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
+          # livenessProbe:
+          #   httpGet:
+          #     path: /order.jsp
+          #     port: 80
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /order.jsp
+          #     port: 80
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          #   successThreshold: 1
+          #   failureThreshold: 5
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -379,20 +379,20 @@ spec:
             limits:
               memory: 128Mi
               cpu: 100m
-          livenessProbe:
-            httpGet:
-              path: /reservation.jsp
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /reservation.jsp
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
+          # livenessProbe:
+          #   httpGet:
+          #     path: /reservation.jsp
+          #     port: 80
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /reservation.jsp
+          #     port: 80
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          #   successThreshold: 1
+          #   failureThreshold: 5
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -445,17 +445,17 @@ spec:
             limits:
               memory: 128Mi
               cpu: 100m
-          livenessProbe:
-            httpGet:
-              path: /reservation_lnfo.jsp # 이거 소문자 알파벳 "l"입니다.
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /reservation_lnfo.jsp
-              port: 80
-            initialDelaySeconds: 60
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 5
+          # livenessProbe:
+          #   httpGet:
+          #     path: /reservation_lnfo.jsp # 이거 소문자 알파벳 "l"입니다.
+          #     port: 80
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          # readinessProbe:
+          #   httpGet:
+          #     path: /reservation_lnfo.jsp
+          #     port: 80
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 10
+          #   successThreshold: 1
+          #   failureThreshold: 5
