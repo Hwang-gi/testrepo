@@ -38,7 +38,7 @@ spec:
             matchLabels:
               app: main-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatmainv1.0
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatmainv1.1
           name: final-tommain
           ports:
             - containerPort: 8080
@@ -112,7 +112,7 @@ spec:
             matchLabels:
               app: signup-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatsignupv1.0
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatsignupv1.1
           name: final-tomsignup
           ports:
             - containerPort: 8080
@@ -186,7 +186,7 @@ spec:
             matchLabels:
               app: login-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatloginv1.0
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatloginv1.1
           name: final-tomlogin
           ports:
             - containerPort: 8080
@@ -260,7 +260,7 @@ spec:
             matchLabels:
               app: logout-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatlogoutv1.0
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatlogoutv1.1
           name: final-tomlogout
           ports:
             - containerPort: 8080
@@ -334,7 +334,7 @@ spec:
             matchLabels:
               app: order-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatorderbeforev1.0
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatorderbeforev1.1
           name: final-tomorder
           ports:
             - containerPort: 8080
@@ -408,7 +408,7 @@ spec:
             matchLabels:
               app: reservation-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatreservationv1.0
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatreservationv1.1
           name: final-tomreservation
           ports:
             - containerPort: 8080
@@ -481,7 +481,7 @@ spec:
             matchLabels:
               app: reservationinfo-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatreservationinfov1.0
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatreservationinfov1.1
           name: final-tomreservationinfo
           ports:
             - containerPort: 8080
