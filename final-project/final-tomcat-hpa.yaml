@@ -87,7 +87,7 @@ spec:
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: final-prd-tomreservationifnfo-hpa
+  name: final-prd-tomreservationinfo-hpa
   namespace: final-backend
 spec:
   maxReplicas: 5
@@ -95,5 +95,5 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: final-prd-tomreservationifnfo
+    name: final-prd-tomreservationinfo
   targetCPUUtilizationPercentage: 40
