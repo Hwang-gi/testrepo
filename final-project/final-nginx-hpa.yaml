@@ -1,0 +1,97 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: final-prd-main-hpa
+  namespace: final-frontend
+spec:
+  maxReplicas: 5
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: final-prd-main
+  targetCPUUtilizationPercentage: 20
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: final-prd-signup-hpa
+  namespace: final-frontend
+spec:
+  maxReplicas: 5
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: final-prd-signup
+  targetCPUUtilizationPercentage: 20
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: final-prd-login-hpa
+  namespace: final-frontend
+spec:
+  maxReplicas: 5
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: final-prd-login
+  targetCPUUtilizationPercentage: 20
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: final-prd-logout-hpa
+  namespace: final-frontend
+spec:
+  maxReplicas: 5
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: final-prd-logout
+  targetCPUUtilizationPercentage: 20
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: final-prd-order-hpa
+  namespace: final-frontend
+spec:
+  maxReplicas: 5
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: final-prd-order
+  targetCPUUtilizationPercentage: 20
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: final-prd-reservation-hpa
+  namespace: final-frontend
+spec:
+  maxReplicas: 5
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: final-prd-reservation
+  targetCPUUtilizationPercentage: 20
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: final-prd-reservationinfo-hpa
+  namespace: final-frontend
+spec:
+  maxReplicas: 5
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: final-prd-reservationinfo
+  targetCPUUtilizationPercentage: 20
