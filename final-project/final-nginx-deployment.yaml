@@ -51,13 +51,13 @@ spec:
               cpu: 100m
           livenessProbe:
             httpGet:
-              path: /main.jsp
+              path: /index.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /main.jsp
+              path: /index.jsp
               port: 80
             initialDelaySeconds: 60
             periodSeconds: 10
