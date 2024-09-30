@@ -1,67 +1,67 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: final-ingress-rule
-  namespace: final-frontend
-  annotations:
-    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:412381775968:certificate/b751752e-83b5-4750-9bd4-4a5e5d636a37
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
-    alb.ingress.kubernetes.io/ssl-redirect: "443"
-spec:
-  ingressClassName: alb
-  rules:
-    - host: www.gitchang.store
-      http:
-        paths:
-          - path: /index.jsp
-            pathType: Prefix
-            backend:
-              service:
-                name: final-main-svc
-                port:
-                  number: 80
-          - path: /signup.jsp
-            pathType: Prefix
-            backend:
-              service:
-                name: final-signup-svc
-                port:
-                  number: 80
-          - path: /login.jsp
-            pathType: Prefix
-            backend:
-              service:
-                name: final-login-svc
-                port:
-                  number: 80
-          - path: /logout.jsp
-            pathType: Prefix
-            backend:
-              service:
-                name: final-logout-svc
-                port:
-                  number: 80
-          - path: /order.jsp
-            pathType: Prefix
-            backend:
-              service:
-                name: final-order-svc
-                port:
-                  number: 80
-          - path: /reservation.jsp
-            pathType: Prefix
-            backend:
-              service:
-                name: final-reservation-svc
-                port:
-                  number: 80
-          - path: /reservation_lnfo.jsp
-            pathType: Prefix
-            backend:
-              service:
-                name: final-reservationinfo-svc
-                port:
-                  number: 80
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: final-ingress-rule
+#   namespace: final-frontend
+#   annotations:
+#     kubernetes.io/ingress.class: alb
+#     alb.ingress.kubernetes.io/scheme: internet-facing
+#     alb.ingress.kubernetes.io/target-type: ip
+#     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:412381775968:certificate/b751752e-83b5-4750-9bd4-4a5e5d636a37
+#     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+#     alb.ingress.kubernetes.io/ssl-redirect: "443"
+# spec:
+#   ingressClassName: alb
+#   rules:
+#     - host: www.gitchang.store
+#       http:
+#         paths:
+#           - path: /index.jsp
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: final-main-svc
+#                 port:
+#                   number: 80
+#           - path: /signup.jsp
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: final-signup-svc
+#                 port:
+#                   number: 80
+#           - path: /login.jsp
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: final-login-svc
+#                 port:
+#                   number: 80
+#           - path: /logout.jsp
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: final-logout-svc
+#                 port:
+#                   number: 80
+#           - path: /order.jsp
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: final-order-svc
+#                 port:
+#                   number: 80
+#           - path: /reservation.jsp
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: final-reservation-svc
+#                 port:
+#                   number: 80
+#           - path: /reservation_lnfo.jsp
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: final-reservationinfo-svc
+#                 port:
+#                   number: 80
