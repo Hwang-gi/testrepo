@@ -38,7 +38,7 @@ spec:
             matchLabels:
               app: main-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxmainv1.0
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-front:nginxindexv1.0
           name: final-main
           ports:
             - containerPort: 80
