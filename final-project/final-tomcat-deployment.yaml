@@ -48,20 +48,20 @@ spec:
             limits:
               memory: 256Mi
               cpu: 200m
-          # livenessProbe:
-          #   httpGet:
-          #     path: /index.jsp
-          #     port: 8080
-          #   initialDelaySeconds: 60
-          #   periodSeconds: 10
-          # readinessProbe:
-          #   httpGet:
-          #     path: /index.jsp
-          #     port: 8080
-          #   initialDelaySeconds: 60
-          #   periodSeconds: 10
-          #   successThreshold: 1
-          #   failureThreshold: 5
+          livenessProbe:
+            httpGet:
+              path: /index.jsp
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /index.jsp
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 5
           volumeMounts:
             - name: pv-finalmain
               mountPath: /data/main
