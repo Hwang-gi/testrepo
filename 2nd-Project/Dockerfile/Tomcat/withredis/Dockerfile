@@ -3,7 +3,7 @@ FROM alpine:3.14 AS build
 
 # TOMCAT VERSION, HOME DIRECTORY 환경변수 설정
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
-ENV TOMCAT_VERSION=9.0.93
+ENV TOMCAT_VERSION=9.0.95
 ENV CATALINA_HOME=/usr/local/tomcat
 
 # 필요한 Package 설치
@@ -13,7 +13,7 @@ RUN apk update && \
 
 # TOMCAT tmp directory에 설치
 RUN mkdir $CATALINA_HOME
-RUN wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.93/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz -O /tmp/tomcat.tar.gz
+RUN wget https://archive.apache.org/dist/tomcat/tomcat-9/${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz -O /tmp/tomcat.tar.gz
 # Tomcat directory는 /usr/local/tomcat로 옮기고, 
 # mariadb J connector 설치하여 /usr/local/tomcat/lib directory로 옮겼습니다.
 RUN cd /tmp && tar xvfz tomcat.tar.gz \
