@@ -4,12 +4,14 @@ metadata:
   name: final-ingress-rule
   namespace: final-frontend
   annotations:
-    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/scheme: internet-facing
+    kubernetes.io/ingress.class: alb #ALB 인그레스 컨트롤러 설치했다면 아마 디폴트로 이 이름일것임
+    alb.ingress.kubernetes.io/scheme: internet-facing #퍼블릭
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:412381775968:certificate/b751752e-83b5-4750-9bd4-4a5e5d636a37
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
-    alb.ingress.kubernetes.io/ssl-redirect: "443"
+    alb.ingress.kubernetes.io/backend-protocol: HTTPS #이거 주의하셈. HTTP가 아니라 https로 박으셈. 내가 보기에 무한루프 리디렉션 버그로 보임
+    alb.ingress.kubernetes.io/actions.response-404: '{"Type": "fixed-response", "FixedResponseConfig": {"ContentType":"text/plain", "StatusCode":"404", "MessageBody":"404 page not found"}}'
+    alb.ingress.kubernetes.io/certificate-arn: ACM인증서 arn임
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP":80}]'
+    alb.ingress.kubernetes.io/healthcheck-path: /
 spec:
   ingressClassName: alb
   rules:
