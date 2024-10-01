@@ -481,7 +481,7 @@ spec:
             matchLabels:
               app: reservationinfo-app
       containers:
-        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatreservationinfov1.1
+        - image: 412381775968.dkr.ecr.ap-northeast-2.amazonaws.com/final-back:tomcatreservationinfov1.2
           name: final-tomreservationinfo
           ports:
             - containerPort: 8080
