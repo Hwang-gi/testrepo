@@ -10,7 +10,7 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: final-prd-tommain
-  targetCPUUtilizationPercentage: 40
+  targetCPUUtilizationPercentage: 50
 
 ---
 apiVersion: autoscaling/v1
@@ -40,7 +40,7 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: final-prd-tomlogin
-  targetCPUUtilizationPercentage: 40
+  targetCPUUtilizationPercentage: 50
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
@@ -68,7 +68,7 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: final-prd-tomorder
-  targetCPUUtilizationPercentage: 40
+  targetCPUUtilizationPercentage: 50
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
@@ -82,7 +82,7 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: final-prd-tomreservation
-  targetCPUUtilizationPercentage: 40
+  targetCPUUtilizationPercentage: 50
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
@@ -96,4 +96,4 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: final-prd-tomreservationinfo
-  targetCPUUtilizationPercentage: 40
+  targetCPUUtilizationPercentage: 50
