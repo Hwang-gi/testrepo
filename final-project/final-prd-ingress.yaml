@@ -9,7 +9,7 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/backend-protocol: HTTPS #이거 주의하셈. HTTP가 아니라 https로 박으셈. 내가 보기에 무한루프 리디렉션 버그로 보임
     alb.ingress.kubernetes.io/actions.response-404: '{"Type": "fixed-response", "FixedResponseConfig": {"ContentType":"text/plain", "StatusCode":"404", "MessageBody":"404 page not found"}}'
-    alb.ingress.kubernetes.io/certificate-arn: ACM인증서 arn임
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:412381775968:certificate/b751752e-83b5-4750-9bd4-4a5e5d636a37
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP":80}]'
     alb.ingress.kubernetes.io/healthcheck-path: /
 spec:
